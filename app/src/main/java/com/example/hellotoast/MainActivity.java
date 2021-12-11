@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
+    public static final int TEXT_REQUEST = 1;
     private int mCount =0;
     private TextView mShowCount;
 
@@ -41,7 +41,8 @@ public class MainActivity extends AppCompatActivity {
         Log.d(LOG_TAG, "Button clicked!");
         Intent intent = new Intent(this , Second_Toast.class);
         intent.putExtra("mCount", mCount);
-        startActivity(intent);
+        String message = mShowCount.getText().toString();
+        startActivityForResult(intent, TEXT_REQUEST);
 
     }
 }

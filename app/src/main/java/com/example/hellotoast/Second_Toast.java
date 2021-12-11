@@ -9,19 +9,21 @@ import android.widget.TextView;
 
 public class Second_Toast extends AppCompatActivity {
     private TextView mShowCount1;
+    private TextView mShowCount2;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_toast);
-        mShowCount1 = findViewById(R.id.show_hello);}
+        mShowCount2 = findViewById(R.id.show_hello);
+        mShowCount1 = findViewById(R.id.show_it);}
+        Intent intent = getIntent();
+        String count = getIntent().getStringExtra("mCount");
+        mShowCount1.setText(count);
 
-        public void secondFrame(View view) {
-            Intent intent = getIntent();
-            String id = getIntent().getStringExtra("mCount");
-            if (mShowCount1 != null)
-                mShowCount1.setText("Hello andrea!"+ id);
-            startActivity(intent);
-        }
+
 
     }
+}
 
